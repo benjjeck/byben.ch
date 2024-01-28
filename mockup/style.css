@@ -58,7 +58,7 @@ body {
 	left: 50%;
 	transform: translateX(calc(-50% - var(--x-offset)));
 	width: 85rem;
-	min-height: 50rem;
+	padding-bottom: 5rem;
 }
 
 .grid-aligner .row {
@@ -182,7 +182,8 @@ h1 {
 
 .cta,
 input,
-textarea {
+textarea,
+button {
 	color: inherit;
 	text-decoration: none;
 	font-weight: inherit;
@@ -229,8 +230,13 @@ textarea.double {
 	margin-bottom: 4rem;
 }
 
-fieldset {
+.input-row {
+	width: 38rem;
 	display: flex;
+}
+
+.input-row.align-right button {
+	margin-left: auto;
 }
 
 .field-wrapper {
@@ -246,6 +252,11 @@ fieldset {
 .cta.primary {
 	font-weight: 600;
 	border-width: 2px;
+	color: var(--clr-text);
+	background-image:
+		/* linear-gradient(-30deg, transparent, var(--clr-background) 20%, var(--clr-background) 80%, transparent), */
+		linear-gradient(160deg, var(--clr-background) 75%, transparent),
+		repeating-linear-gradient(60deg, var(--clr-text), var(--clr-text) 2px, transparent 2px, transparent 6px);
 }
 
 .cta.primary .marker {
@@ -290,20 +301,12 @@ fieldset {
 #button_contact {
 	top: 5rem;
 	width: 20rem;
-	color: var(--clr-text);
-	background-image:
-		/* linear-gradient(-30deg, transparent, var(--clr-background) 20%, var(--clr-background) 80%, transparent), */
-		linear-gradient(160deg, var(--clr-background) 75%, transparent),
-		repeating-linear-gradient(60deg, var(--clr-text), var(--clr-text) 2px, transparent 2px, transparent 6px);
 }
 
-#button_contact:hover {
+.cta.primary:hover,
+form button:hover {
 	background-image:
-		linear-gradient(90deg, var(--clr-text), var(--clr-text) 2px);
-	color: var(--clr-background);
-}
-
-.cta.primary:hover {
+	linear-gradient(90deg, var(--clr-text), var(--clr-text) 2px);
 	color: var(--clr-background);
 }
 
