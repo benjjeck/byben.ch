@@ -252,11 +252,12 @@ textarea.double {
 .cta.primary {
 	font-weight: 600;
 	border-width: 2px;
-	color: var(--clr-text);
-	background-image:
-		/* linear-gradient(-30deg, transparent, var(--clr-background) 20%, var(--clr-background) 80%, transparent), */
+	color: var(--clr-background);
+	background-color: var(--clr-text);
+	/* background-image:
+		linear-gradient(-30deg, transparent, var(--clr-background) 20%, var(--clr-background) 80%, transparent),
 		linear-gradient(160deg, var(--clr-background) 75%, transparent),
-		repeating-linear-gradient(60deg, var(--clr-text), var(--clr-text) 2px, transparent 2px, transparent 6px);
+		repeating-linear-gradient(60deg, var(--clr-text), var(--clr-text) 2px, transparent 2px, transparent 6px); */
 }
 
 .cta.primary .marker {
@@ -306,8 +307,8 @@ textarea.double {
 .cta.primary:hover,
 form button:hover {
 	background-image:
-	linear-gradient(90deg, var(--clr-text), var(--clr-text) 2px);
-	color: var(--clr-background);
+	linear-gradient(160deg, var(--clr-text) 75%, transparent),
+	repeating-linear-gradient(60deg, var(--clr-background), var(--clr-background) 2px, transparent 2px, transparent 6px); */
 }
 
 #button_learn_more {
