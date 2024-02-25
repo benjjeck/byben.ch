@@ -86,13 +86,12 @@ body {
 }
 
 .navigation {
-	position: absolute;
+	position: fixed;
 	z-index: 10;
-	right: 0;
+	right: 0rem;
 	top: 10rem;
 	height: 20rem;
 	width: 11rem;
-	/* border-right: 2px solid var(--clr-text); */
 	box-sizing: content-box;
 	border-width: 0;
 	border-right-width: 2px;
@@ -111,6 +110,14 @@ body {
 	margin: 0;
 	height: 5rem;
 	position: relative;
+}
+
+.nav-arrow {
+	height: 0.8rem;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin-left: -1.3rem;
 }
 
 .nav-link {
@@ -163,6 +170,25 @@ body {
 	width: 1rem;
 	transition: all 0.1s ease-in-out;
 }
+
+.nav-item.active:hover::before,
+.nav-item.active:hover::after {
+	width: 0;
+}
+
+.nav-item.active .nav-link:before {
+	content: '';
+	background-image: url('./assets/arrow.svg');
+	background-repeat: no-repeat;
+	height: 0.8rem;
+	width: 5rem;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	transform: translate(-1rem, -30%);
+	margin-left: -1.3rem;
+}
+
 
 h1 {
 	padding-top: 6.2rem;
@@ -246,7 +272,7 @@ textarea.double {
 .field-wrapper label {
 	position: absolute;
 	top: 0%;
-	transform: translateY(-100%);
+	transform: translateY(-110%);
 }
 
 .cta.primary {
