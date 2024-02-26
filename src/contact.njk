@@ -1,0 +1,49 @@
+--- 
+title: Kontakt | byben
+layout: base.njk 
+---
+
+<div class="hero">
+  <div class="row height-3">
+    <h1>Kontakt</h1>
+  </div>
+</div>
+<form id="contact-from" action="#" method="post">
+  <div class="input-row">
+    <div class="field-wrapper">
+      <input type="text" name="first-name" id="customer-first-name" required="required"/>
+      <label for="customer-name">Vorname*</label>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="last-name" id="customer-last-name" required="required"/>
+      <label for="customer-name">Name*</label>
+    </div>
+  </div>
+  <div class="input-row">
+    <div class="field-wrapper">
+      <input class="double" type="email" name="email" id="customer-email" required="required"/>
+      <label for="customer-email">E-Mail Adresse*</label>
+    </div>
+  </div>
+  <div class="input-row gap">
+    <div class="field-wrapper">
+      <input class="double" type="phone" name="phone" id="customer-phone"/>
+      <label for="customer-phone">Telefonnummer</label>
+    </div>
+  </div>
+  <div class="input-row">
+    <div class="field-wrapper">
+      <input class="double" type="text" name="subject" id="subject" required="required"/>
+      <label for="subject">Betreff</label>
+    </div>
+  </div>
+  <div class="input-row">
+    <div class="field-wrapper">
+      <textarea class="double" type="text" name="message" id="message" required="required"></textarea>
+      <label for="subject">Nachricht</label>
+    </div>
+  </div>
+  <div class="input-row align-right">
+    <button type="submit">Abschicken</button>
+  </div>
+</form>
