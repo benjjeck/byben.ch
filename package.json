@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/benjjeck/byben.ch/issues"
   },
-  "homepage": "https://github.com/benjjeck/byben.ch#readme"
+  "homepage": "https://github.com/benjjeck/byben.ch#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
 }
