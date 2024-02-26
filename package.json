@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "eleventy --serve",
+    "build": "eleventy"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/benjjeck/byben.ch/issues"
   },
-  "homepage": "https://github.com/benjjeck/byben.ch#readme"
+  "homepage": "https://github.com/benjjeck/byben.ch#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
 }
