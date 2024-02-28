@@ -4,12 +4,28 @@
 	--clr-background: #D9CEC1;
 	--clr-background-light: #ede6de;
 	--clr-lines: #C6BBAE;
-	--clr-text: #2B3640;
+	--clr-primary: #2B3640;
+	--clr-primary-transparent: #2b364080;
 	--y-offset: 2rem;
 	--x-offset: 0rem;
 	font-size: 16px;
 	--component-gap: 5rem;
+
+	--svg-filter: invert(15%) sepia(4%) saturate(4582%) hue-rotate(166deg) brightness(88%) contrast(81%);
 }
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--clr-background: #0b1d44;
+		--clr-background-light: #14274f;
+		--clr-lines: #192d57;
+		--clr-primary: hsl(222, 52%, 95%);	
+		--clr-primary-transparent: #ecf0f980;	
+
+		--svg-filter: invert(100%) sepia(25%) saturate(2589%) hue-rotate(178deg) brightness(103%) contrast(96%);
+	}
+}
+
 
 html {
 	font-family: 'Eras ITC';
@@ -41,6 +57,8 @@ body {
 		min-height: 62rem;
 		position: relative;
 		margin: 0;
+
+		color: var(--clr-primary);
 }
 
 .hero {
@@ -84,6 +102,12 @@ body {
 	left: -1.3rem;
 }
 
+@media (prefers-color-scheme: dark) {
+	.logo {
+		filter: var(--svg-filter);
+	}
+}
+
 .navigation {
 	position: fixed;
 	z-index: 10;
@@ -95,7 +119,7 @@ body {
 	border-width: 0;
 	border-right-width: 2px;
 	border-style: solid;
-	border-image: linear-gradient(transparent, var(--clr-text) 1rem, var(--clr-text) 19rem, transparent) 1;
+	border-image: linear-gradient(transparent, var(--clr-primary) 1rem, var(--clr-primary) 19rem, transparent) 1;
 }
 
 .nav-list {
@@ -137,7 +161,7 @@ body {
 	height: 2px;
 	width: 0;
 	background-image:
-		linear-gradient(90deg, transparent, var(--clr-text) 1rem);
+		linear-gradient(90deg, transparent, var(--clr-primary) 1rem);
 	position: absolute;
 	right: 0;
 	bottom: -2px;
@@ -154,8 +178,8 @@ body {
 		linear-gradient(
 			90deg,
 			transparent,
-			var(--clr-text) 0.1rem,
-			var(--clr-text) 0.9rem,
+			var(--clr-primary) 0.1rem,
+			var(--clr-primary) 0.9rem,
 			transparent);
 	bottom: -2px;
 	right: 0;
@@ -178,7 +202,7 @@ body {
 
 .nav-item:hover .nav-link:before {
 	content: '';
-	background-image: url('/assets/arrow.svg');
+	background-image: url('/assets/arrow_black.svg');
 	background-repeat: no-repeat;
 	height: 0.8rem;
 	width: 5rem;
@@ -187,6 +211,7 @@ body {
 	bottom: 0;
 	transform: translate(-1rem, -50%);
 	margin-left: -1.3rem;
+	filter: var(--svg-filter);
 }
 
 .nav-item.active:hover .nav-link:before {
@@ -226,7 +251,7 @@ button {
 	top: 0;
 	left: 0;
 	border-radius: 0;
-	border: 1px solid var(--clr-text);
+	border: 1px solid var(--clr-primary);
 	background: 0;
 	padding: 0 2rem;
 	font-size: 1.2rem;
@@ -280,17 +305,52 @@ textarea.double {
 	transform: translateY(-110%);
 }
 
+.cta::after {
+	content: '';
+	position: absolute;
+	width: 13rem;
+	height: 100%;
+	right: 0;
+	bottom: 0;
+	background-image: url(/assets/cross_hatch_2_black.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 14em -7rem;
+	filter: var(--svg-filter);
+	transition: background-position 0.1s ease-out;
+}
+
+.cta:hover::after {
+	background-position: 6rem -1rem;
+}
+
+#button_learn_more {
+	width: 20rem;
+}
+
 .cta.primary {
 	font-weight: 600;
 	border-width: 2px;
 	color: var(--clr-background);
-	background: rgba(43, 54, 64, 0.5);
-	background-image: url(/assets/cross_hatch.svg);
+	/* background-image:
+		linear-gradient(160deg, var(--clr-primary) 75%, transparent),
+		repeating-linear-gradient(60deg, var(--clr-background), var(--clr-background) 2px, var(--clr-primary) 2px, var(--clr-primary) 6px); */
+}
+
+.cta.primary::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	background: var(--clr-primary-transparent);
+	background-image: url(/assets/cross_hatch_black.svg);
 	background-size: 150%;
 	background-position: center center;
-	/* background-image:
-		linear-gradient(160deg, var(--clr-text) 75%, transparent),
-		repeating-linear-gradient(60deg, var(--clr-background), var(--clr-background) 2px, var(--clr-text) 2px, var(--clr-text) 6px); */
+	filter: var(--svg-filter);
+	transform: none;
 }
 
 .cta.primary .marker {
@@ -305,8 +365,8 @@ textarea.double {
 		linear-gradient(
 			90deg,
 			transparent,
-			var(--clr-text) 0.05rem,
-			var(--clr-text) 0.95rem,
+			var(--clr-primary) 0.05rem,
+			var(--clr-primary) 0.95rem,
 			transparent);
 	transform-origin: 50% 50%;
 	transform: rotate(45deg);
@@ -337,27 +397,10 @@ textarea.double {
 	width: 20rem;
 }
 
-.cta.primary:hover,
-form button:hover {
+.cta.primary:hover {
 	background-image:
-	linear-gradient(90deg, var(--clr-text), var(--clr-text) 2px);
+	linear-gradient(90deg, var(--clr-primary), var(--clr-primary) 2px);
 	color: var(--clr-background);
-}
-
-#button_learn_more {
-	width: 20rem;
-	background-image: url(/assets/cross_hatch_2.svg);
-	background-repeat: no-repeat;
-	background-position: 220% 100%;
-	background-size: 50%;
-	transition: background-position 0.1s ease-out;
-}
-
-#button_learn_more:hover {
-	background-position: 140% 20%;
-	/* background-image:
-	linear-gradient(160deg, var(--clr-background) 75%, transparent),
-		repeating-linear-gradient(60deg, var(--clr-text), var(--clr-text) 2px, transparent 2px, transparent 6px); */
 }
 
 
@@ -365,7 +408,7 @@ footer {
 	position: relative;
 	margin: 5rem 0 0 0;
 	width: 100%;
-	border-top: 1px solid var(--clr-text);
+	border-top: 1px solid var(--clr-primary);
 }
 
 .gallery {
@@ -377,12 +420,12 @@ footer {
 }
 
 .gallery-image {
-	border: 1px solid var(--clr-text);
+	border: 1px solid var(--clr-primary);
 	height: 100%;
 	width: 100%;
 	background-image:
 		linear-gradient(160deg, var(--clr-background) 75%, transparent),
-		repeating-linear-gradient(60deg, var(--clr-text), var(--clr-text) 2px, transparent 2px, transparent 6px);
+		repeating-linear-gradient(60deg, var(--clr-primary), var(--clr-primary) 2px, transparent 2px, transparent 6px);
 	position: relative;
 	overflow: hidden;
 	grid-column: span 1;
