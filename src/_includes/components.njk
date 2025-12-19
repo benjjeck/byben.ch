@@ -1,0 +1,13 @@
+{% macro projectImage(filePath) %}
+	{% set project = fs.readFileSync(filePath) %}
+
+	<div class="gallery-image big">
+		<a href="/projects/kinder-maltisch">
+			<img src="{{ project.image }}" alt=""/>
+			<div class="project-info">
+			<p class="project-title">{{ project.title }}</p>
+			<p class="project-description">{{ project.short }}</p>
+			</div>
+		</a>
+	</div>
+{% endmacro %}

@@ -5,8 +5,8 @@
 				<li class="nav-item {% if 'projects' in currentUrl %} active {% endif %}">
 						<a class="nav-link" href="/projects/">Projekte</a>
 				</li>
-				<li class="nav-item {% if 'about' in currentUrl %} active {% endif %}">
-						<a class="nav-link" href="/about/">Über mich</a>
+				<li class="nav-item {% if ('about' in currentUrl) and not ('/impressum' in currentUrl) %} active {% endif %}">
+						<a class="nav-link" href="/about">Über mich</a>
 				</li>
 				<li class="nav-item {% if 'contact' in currentUrl %} active {% endif %}">
 						<a class="nav-link" href="/contact/">Kontakt</a>
