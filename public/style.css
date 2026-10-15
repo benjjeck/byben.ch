@@ -5,7 +5,7 @@
 	--clr-background-light: #ede6de;
 	--clr-lines: #C6BBAE;
 	--clr-text: #2D3640;
-	--y-offset: 2rem;
+	--y-offset: -1rem;
 	--x-offset: 0rem;
 	font-size: 16px;
 	--component-gap: 5rem;
@@ -78,9 +78,9 @@ body {
 
 .logo {
 	position: absolute;
-	height: 6rem;
-	bottom: -1rem;
-	left: -1.3rem;
+	height: 10rem;
+	bottom: -3rem;
+	left: -2.2rem;
 }
 
 .navigation {
