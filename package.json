@@ -1,24 +1,12 @@
 {
-  "name": "byben.ch",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "byben-ch",
+  "type": "module",
   "scripts": {
-    "dev": "eleventy --serve",
-    "build": "eleventy"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/benjjeck/byben.ch.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/benjjeck/byben.ch/issues"
-  },
-  "homepage": "https://github.com/benjjeck/byben.ch#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+  "dependencies": {
+    "astro": "^7.4.0"
   }
 }

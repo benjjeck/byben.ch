@@ -1,0 +1,59 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout title="byben">
+  <div class="grid-aligner">
+    <div class="hero">
+      <div class="row height-2">
+        <a href="./">
+          <img src="/assets/byben_horizontal.png" alt="byben logo" class="logo" />
+        </a>
+      </div>
+      <nav class="navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link">Projekte</a></li>
+          <li class="nav-item"><a class="nav-link">Über mich</a></li>
+          <li class="nav-item"><a class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="row height-3">
+        <h1>
+          Schreinerarbeiten und kreative <br />
+          Projekte aller Art.
+        </h1>
+      </div>
+      <div class="row height-2">
+        <a class="cta primary align-to-grid" id="button_contact">
+          <span>Jetzt Kontakt aufnehmen</span>
+          <div class="marker"></div>
+          <div class="marker"></div>
+          <div class="marker"></div>
+          <div class="marker"></div>
+        </a>
+      </div>
+      <div class="row height-1">
+        <a class="cta align-to-grid" id="button_learn_more" href="#gallery">
+          Meine Arbeit kennenlernen
+          <div class="marker"></div>
+          <div class="marker"></div>
+          <div class="marker"></div>
+          <div class="marker"></div>
+        </a>
+      </div>
+    </div>
+    <div class="content">
+      <div class="gallery">
+        <div class="gallery-image" id="image_1"></div>
+        <div class="gallery-image" id="image_2"></div>
+        <div class="gallery-image" id="image_3"></div>
+        <div class="gallery-image" id="image_4"></div>
+        <div class="gallery-image" id="image_5"></div>
+        <div class="gallery-image" id="image_6"></div>
+        <div class="gallery-image" id="image_7"></div>
+        <div class="gallery-image" id="image_8"></div>
+      </div>
+    </div>
+    <footer></footer>
+  </div>
+</SiteLayout>
